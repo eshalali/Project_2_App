@@ -21,7 +21,7 @@ name: String,
 amount: Number,
 category: String (dropdown menu)
 ### ERD ###
-!(/images/ERD.png)
+![erd](/images/ERD.png)
 
 
 ## User stories ##
@@ -96,10 +96,10 @@ Delete      | DELETE     | /expected/:id      | delete a single expected expense
 * Plaid provides main store name/what the expense was, the user can add a description
 
 ## Wireframes ##
-!(/images/WF1.png)
-!(/images/WF2.png)
-!(/images/WF3.png)
-!(/images/WF4.png)
+![wireframe](/images/WF1.png)
+![wireframe](/images/WF2.png)
+![wireframe]!(/images/WF3.png)
+![wireframe](/images/WF4.png)
 
 ## Timeline ##
 Day 1: Create user 
