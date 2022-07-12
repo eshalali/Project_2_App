@@ -3,23 +3,23 @@
 A budget app designed to house all expenses and goals in one place. Instead of having to look at spreadsheets, give a more aesthetically appealing display of a user's spending and saving habits and help them to meet their financial goals.
 ## Models ##
 ### Expected expenses ###
-name: String,
-description: String,
-amount: Number,
-category: String (dropdown menu)
+name: String,  
+description: String,  
+amount: Number,  
+category: String (dropdown menu)  
 ### Actual expenses ###
-name: String,
-description: String,
-amount: Number,
-category: String (dropdown menu)
+name: String,  
+description: String,  
+amount: Number,  
+category: String (dropdown menu)  
 ### Long-term financial goals ###
-name: String,
-description: String,
-category: String (dropdown menu)
+name: String,  
+description: String,  
+category: String (dropdown menu)  
 ### Investments ###
-name: String,
-amount: Number,
-category: String (dropdown menu)
+name: String,  
+amount: Number,  
+category: String (dropdown menu)  
 ### ERD ###
 ![erd](/images/ERD.png)
 
@@ -102,10 +102,10 @@ Delete      | DELETE     | /expected/:id      | delete a single expected expense
 ![wireframe](/images/WF4.png)
 
 ## Timeline ##
-Day 1: Create user 
-Day 2: Create expected expense routes
-Day 3: Create actual expense routes - connect API
-Day 4: Create long term goal routes
-Day 5: Create investment routes
-Day 6: Styling
-Day 7: Debugging/final touches
+Day 1: Create user  
+Day 2: Create expected expense routes  
+Day 3: Create actual expense routes - connect API  
+Day 4: Create long term goal routes  
+Day 5: Create investment routes  
+Day 6: Styling  
+Day 7: Debugging/final touches  
