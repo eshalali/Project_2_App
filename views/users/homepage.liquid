@@ -1,0 +1,48 @@
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <!-- link for css -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- link for bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <!-- link for font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Ibarra+Real+Nova&family=Yeseva+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Welcome back</h1>
+<div>
+    <span class="homepage">
+    <a href="/expected/" style="text-decoration:none">
+        <img class="homeIcons" src="https://c1.alamy.com/thumbs/pyn33w/money-line-icon-on-a-white-background-vector-illustration-pyn33w.jpg">
+        <h5>Expected Expenses</h5>
+    </a>
+    </span>
+    <span class="homepage">
+    <a  href="/actual/" style="text-decoration:none">
+        <img class="homeIcons" src="https://img.freepik.com/premium-vector/hand-holding-bag-with-money-icon-black-money-sack-sign-vector-isolated-white-background-eps-10_399089-2809.jpg?w=2000">
+        <h5>Actual Expenses</h5>
+    </a>
+    </span>
+    <span class="homepage">
+    <a href="/goals/" style="text-decoration:none">
+        <img class="homeIcons" src="https://static.vecteezy.com/system/resources/previews/004/261/104/original/target-icon-illustration-on-white-background-bullseye-arrow-goal-symbol-free-free-vector.jpg">
+        <h5>Goals</h5>
+    </a>
+    </span>
+    <span class="homepage">
+    <a href="/investments/" style="text-decoration:none">
+        <img class="homeIcons" src="https://static.vecteezy.com/system/resources/previews/004/924/730/original/money-icon-with-arrow-up-free-vector.jpg">
+        <h5>Investments</h5>
+    </a>
+    </span>
+</div>
+<div>
+    <a href="/users/logout"><button class="logout">Log Out</button></a> 
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div>
+    <h2 class="display-6">Investments</h2>
+    <div class="row">
+        {% for investment in investments %}
+        <div class="card" style="width: 100%">
+            <h5 class="card-header">Name: {{investment.name}}</h5>
+            <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+            <p class="card-text">Description: {{investment.description}}</p>
+            <h6 class="card-text">Category: {{investment.category}}</h6>
+            <a href="/investments/{{investment._id}}" class="btn btn-info">View expense</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/investments/new" class="btn btn-primary">Create new investment</a>
+</div>
+
+{% endblock %}

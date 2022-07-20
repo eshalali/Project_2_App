@@ -1,0 +1,29 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/goals" method="POST">
+        <fieldset>
+            <legend>Create a New Goal</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="name" 
+                placeholder="enter name"
+            >
+            <label class="form-label">Description:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="description" 
+                placeholder="enter description"
+            >
+        <input 
+            type="submit" 
+            value="Create New Goal" 
+            class="btn btn-primary"
+        >
+    </form>
+</div>
+{% endblock %}

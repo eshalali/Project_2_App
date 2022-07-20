@@ -1,0 +1,18 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div>
+    <h2 class="display-6">Goals</h2>
+    <div class="row">
+        {% for goal in goals %}
+        <div class="card" style="width: 100%">
+            <h5 class="card-header">Name: {{goal.name}}</h5>
+            <p class="card-text">Description: {{goal.description}}</p>
+            <a href="/goals/{{goal._id}}" class="btn btn-info">View goal</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/goals/new" class="btn btn-primary">Create new goal</a>
+</div>
+
+{% endblock %}

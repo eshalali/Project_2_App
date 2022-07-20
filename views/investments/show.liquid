@@ -1,0 +1,19 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-md">
+    <h2>Investment</h2>
+    <h5>Name: {{investment.name}}</h5>
+    <h6>Amount: ${{investment.amount}}</h6>
+    <h6>Description: {{investment.description}}</p>
+    <h6>Category: {{investment.category}}</h6>
+    <div>
+    <a href="/investments/{{investment._id}}/edit" class="btn btn-primary">Edit investment</a>
+    </div>
+    <div>
+    <form action="/investments/{{investment._id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete investment" class="btn btn-default btn-invest">
+    </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/investments" method="POST">
+        <fieldset>
+            <legend>New Investment</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="name" 
+                placeholder="enter name"
+            >
+            <label class="form-label">Amount: $</label>
+            <input 
+                class="form-control" 
+                type="number" 
+                name="amount" 
+                placeholder="enter amount"
+            >
+            <label class="form-label">Description:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="description" 
+                placeholder="enter description"
+            >
+            <label for="cat" class="form-label">Category:</label>
+            <select name="category" id="cat">
+                    <option value="{{investment.category}}">{{investment.category}}</option>
+                    <option value="Stocks">Stocks</option>
+                    <option value="Bonds">Bonds</option>
+                    <option value="Mutual Funds">Mutual Funds</option>
+                    <option value="ETFs">ETFs</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Options">Options</option>
+                    <option value="Cryptocurrency">Cryptocurrency</option>
+                    <option value="Commodities">Commodities</option>
+            </select>
+        </fieldset>
+        <input 
+            type="submit" 
+            value="Create New Investment" 
+            class="btn btn-primary"
+        >
+    </form>
+</div>
+{% endblock %}

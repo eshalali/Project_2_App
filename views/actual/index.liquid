@@ -1,0 +1,22 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div>
+    <h2 class="display-6">Actual Expenses</h2>
+    <div class="row">
+        {% for item in actual %}
+        <div class="card" style="width: 100%" style="background-color: lightgrey">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Date: {{item.date}}</h6>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/actual/new" class="btn btn-primary">Create new expense</a>
+    <a href="/actual/compare" class="btn btn-primary">Compare</a>
+</div>
+
+{% endblock %}

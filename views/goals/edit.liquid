@@ -1,0 +1,33 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/goals/{{goal._id}}?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Edit Goal</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="name" 
+                placeholder="enter name"
+                value="{{goal.name}}"
+            >
+            <label class="form-label">Description:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="description" 
+                placeholder="enter description"
+                value="{{goal.description}}"
+            >
+        </fieldset>
+        <a href="/goals/{{goal._id}}">Nevermind</a>
+        <input 
+            type="submit" 
+            value="Edit Goal" 
+            class="btn btn-primary"
+        >
+    </form>
+</div>
+{% endblock %}
