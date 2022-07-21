@@ -6,6 +6,7 @@
     <div class="row">
     <div class="col">
         <h2>Expenses</h2>
+        <!-- for expenses, color card by category -->
         {% for item in expected %}
         {% if item.type == 'Expense' %}
         {% if item.category == "Housing" %}

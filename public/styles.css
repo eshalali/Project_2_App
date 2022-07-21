@@ -157,8 +157,8 @@ h2 {
     margin-bottom: auto;
 }
 
-.check:checked ~ .card2 {
-    background-color: rgba(138, 145, 156, 0.596) !important;
+.check:checked ~ .card2{
+    text-decoration-line: line-through !important;
   }
 
 

@@ -121,7 +121,16 @@ router.put('/:id', (req, res) => {
 router.get('/', (req, res) => {
     Actual.find({ owner: req.session.userId})
         .then(actual => {
-            res.render('actual/index', { actual })
+            let incomeAmount = 10
+            let expenseAmount = 20
+            for (let i = 0; i < actual.length; i++) {
+                if (actual[i].type === 'Income') {
+                    incomeAmount+=actual[i].amount
+                } else {
+                    expenseAmount+=actual[i].amount
+                }
+            }
+            res.render('actual/index', { actual, incomeAmount: incomeAmount, expenseAmount: expenseAmount })
         })
         .catch(err => {
             res.json(err)

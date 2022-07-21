@@ -6,16 +6,18 @@ A budget app designed to house all expenses and goals in one place. Instead of h
 name: String,  
 description: String,  
 amount: Number,  
-category: String (dropdown menu)  
+date: String,  
+category: String (dropdown menu),  
+type: String (dropdown),  
 ### Actual expenses ###
 name: String,  
 description: String,  
-amount: Number,  
-category: String (dropdown menu)  
+amount: Number,    
+category: String (dropdown menu),  
+type: String (dropdown),  
 ### Long-term financial goals ###
 name: String,  
 description: String,  
-category: String (dropdown menu)  
 ### Investments ###
 name: String,  
 amount: Number,  
@@ -90,15 +92,15 @@ Create      | POST       | /expected          | create expected expense,redirect
 Delete      | DELETE     | /expected/:id      | delete a single expected expense        |
 
 ## API ##
-### Plaid API ###
-* Allows for access to bank transactions; user can add their bank account and import transactions
-* Each transaction has a category/tags to make sorting easier
-* Plaid provides main store name/what the expense was, the user can add a description
+### Finage API ###
+* Allows for access to stock data
+* Each symbol has category that it is part of
+* Creates a ticker showing the data at the top of the investments page
 
 ## Wireframes ##
 ![wireframe](/images/WF1.png)
 ![wireframe](/images/WF2.png)
-![wireframe]!(/images/WF3.png)
+![wireframe](/images/WF3.png)
 ![wireframe](/images/WF4.png)
 
 ## Timeline ##
