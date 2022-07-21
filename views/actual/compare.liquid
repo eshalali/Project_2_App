@@ -14,102 +14,46 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Ibarra+Real+Nova&family=Yeseva+One&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      const var1 = 1
-      const var2 = 2
-      const var3 = 3
-      const var4 = 4
-      const var5 = 5
-      google.charts.load("current", {packages:["corechart"]});
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day', {role: 'style'}],
-          ['Work',     var1, 'color: #e5e4e2' ],
-          ['Eat',      var2, 'color: #e5e4e1' ],
-          ['Commute',  var3, 'color: #e5e4e4' ],
-          ['Watch TV', var4, 'color: #e5e4e6' ],
-          ['Sleep',    var5, '#e5e4e3' ]
+        let incomeAmount = 10
+        let expenseAmount = 20
+        for (item in actual) {
+          if (item.type === 'Income') {
+            incomeAmount+=item.amount
+          } else {
+            expenseAmount+=item.amount
+          }
+        }
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Category');
+        data.addColumn('number', 'Amount');
+        data.addRows([
+          ['Income', incomeAmount],
+          ['Expenses', expenseAmount],
         ]);
 
-        var options = {
-          title: 'Expected Expenses',
-          pieHole: 0.4,
-        };
+        // Set chart options
+        var options = {'title':'Income vs Expenses',
+                       'width':700,
+                       'height':500};
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
-
-    <script type="text/javascript">
-      let actHousing = 0
-      let actUtilities = 0
-      let actInsurance = 0
-      let actFood = 0
-      let actTransport = 0
-      let actMedical = 0
-      let actPersonal = 0
-      let actShopping = 0
-      let actEnter = 0
-      let actDebt = 0
-      let actSavings = 0
-      let actOther = 0
-      for (let i = 0; i < actual.length; i++) {
-      if (actual[i].category === 'Housing') {
-          actHousing+=actual[i].amount
-      } else if (actual[i].category === 'Utilities'){
-          actUtilities+=actual[i].amount
-      } else if (actual[i].category === 'Insurance'){
-          actInsurance+=actual[i].amount
-      } else if (actual[i].category === 'Food'){
-          actFood+=actual[i].amount
-      } else if (actual[i].category === 'Transportation'){
-          actTransport+=actual[i].amount
-      } else if (actual[i].category === 'Medical'){
-          actMedical+=actual[i].amount
-      } else if (actual[i].category === 'Personal'){
-          actPersonal+=actual[i].amount
-      } else if (actual[i].category === 'Shopping'){
-          actShopping+=actual[i].amount
-      } else if (actual[i].category === 'Entertainment'){
-          actEnter+=actual[i].amount
-      } else if (actual[i].category === 'Debt'){
-          actDebt+=actual[i].amount
-      } else if (actual[i].category === 'Savings'){
-          actSavings+=actual[i].amount
-      } else {
-          actOther+=actual[i].amount
-      }
-   }
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data2 = google.visualization.arrayToDataTable([
-            ['Category', 'Amount', {role: 'style'} ],
-            ['Housing', actHousing],
-            ['Utilities', actUtilities],
-            ['Insurance', actInsurance],
-            ['Food', actFood],
-            ['Transportation', actTransport],
-            ['Medical', actMedical],
-            ['Personal', actPersonal],
-            ['Shopping', actShopping],
-            ['Entertainment', actEnter],
-            ['Debt', actDebt],
-            ['Savings', actSavings],
-            ['Other', actOther],
-            ]);
-
-        var options = {
-          title: 'Actual Expenses',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart2'));
-        chart.draw(data2, options);
-      }
-    </script>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-md ">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
@@ -126,7 +70,6 @@
           <a href="/users/logout" class="nav-link text-light">Log Out</a>
       </div>
     </nav>
-    <div id="donutchart" style="width: 650px; height: 800px; display: inline-block; text-align: center;"></div>
-    <div id="donutchart2" style="width: 650px; height: 800px; display: inline-block;"></div>
+    <div id="chart_div"></div>
   </body>
 </html>

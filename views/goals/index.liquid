@@ -7,10 +7,12 @@
         <div class="card2 item" style="width: 100%">
             <h5 class="card-header">Name: {{goal.name}}</h5>
             <p class="card-text">Description: {{goal.description}}</p>
+            <form action="/goals/{{goal._id}}?_method=DELETE" method="POST">
+                <input class="goal-delete" type="submit" value="Delete">
+            </form>
             <input type="checkbox" id="done" class="check" style="float: right;" />
                 <!-- <div class="content" style="display: inline-block"> -->
                     <a href=""></a>
-                </div>
             <!-- </div>
             <a href="/goals/{{goal._id}}" class="btn btn-info">View goal</a>
             </div> -->
