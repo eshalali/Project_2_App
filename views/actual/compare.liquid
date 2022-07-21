@@ -21,22 +21,13 @@
       google.charts.setOnLoadCallback(drawChart);
 
       // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
+      // instantiates the chart, passes in the data and
       // draws it.
       function drawChart() {
-        let incomeAmount = 10
-        let expenseAmount = 20
-        for (item in actual) {
-          if (item.type === 'Income') {
-            incomeAmount+=item.amount
-          } else {
-            expenseAmount+=item.amount
-          }
-        }
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Category');
-        data.addColumn('number', 'Amount');
+        data.addColumn('number', 'Amount in $');
         data.addRows([
           ['Income', incomeAmount],
           ['Expenses', expenseAmount],
@@ -71,5 +62,7 @@
       </div>
     </nav>
     <div id="chart_div"></div>
+    <a href="/actual">Back to all expenses</a>
+    <p>{{incomeAmount}}</p>
   </body>
 </html>

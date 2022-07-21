@@ -1,20 +1,83 @@
-{% layout 'layout.liquid' %}
 {% block content %}
-<div>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <!-- link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- link for css -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- link for font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Ibarra+Real+Nova&family=Yeseva+One&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+    src="https://cdn.finage.co.uk/ticker-tape/main.js">
+    </script>
+    <script>
+      finageTickerTape.symbols(["btcusd:crypto", "eurusd:forex"]);
+      
+      finageTickerTape.colors(["",""]);  //background color, text color
+      finageTickerTape.theme(["dark-night"]); //pearl-white, midnight, dark-night
+      
+      finageTickerTape.initWidget();
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <a href="/users/homepage" class="nav-link text-light">Home</a>
+          <a href="/users/signup" class="nav-link text-light">Sign Up</a>
+          <a href="/users/login" class="nav-link text-light">Log In</a>
+          <a href="/expected/" class="nav-link text-light">Expected Expenses</a>
+          <a href="/actual/" class="nav-link text-light">Actual Expenses</a>
+          <a href="/goals/" class="nav-link text-light">Goals</a>
+          <a href="/investments/" class="nav-link text-light">Investments</a>
+          <a href="/users/logout" class="nav-link text-light">Log Out</a>
+      </div>
+    </nav>
+    
+    <div class="finage-ticker-tape-item"> </div>
+        
+    <script type="text/javascript"
+    src="https://cdn.finage.co.uk/ticker-tape/main.js">
+    </script>
+    <script>
+      finageTickerTape.symbols(["btcusd:crypto", "eurusd:forex"]);
+      
+      finageTickerTape.colors(["",""]);  //background color, text color
+      finageTickerTape.theme(["midnight"]); //pearl-white, midnight, dark-night
+      
+      finageTickerTape.initWidget();
+    </script>
+          
+        
+    <div>
     <h2 class="display-6">Investments</h2>
     <div class="row">
+        <div class="col">
         {% for investment in investments %}
-        <div class="card" style="width: 100%">
+        <div class="card2" style="width: 70%; height: 150px">
             <h5 class="card-header">Name: {{investment.name}}</h5>
             <h6 class="card-text">Amount: ${{investment.amount}}</h6>
             <p class="card-text">Description: {{investment.description}}</p>
             <h6 class="card-text">Category: {{investment.category}}</h6>
             <a href="/investments/{{investment._id}}" class="btn btn-info">View expense</a>
-            </div>
+        </div>
+        </div>
         </div>
         {% endfor %}
     </div>
     <a href="/investments/new" class="btn btn-primary">Create new investment</a>
-</div>
+    </div>
+  </body>
+</html>
 
 {% endblock %}
