@@ -4,7 +4,7 @@
     <h2 class="display-6">Goals</h2>
     <div class="row">
         {% for goal in goals %}
-        <div class="card2 item" style="width: 100%">
+        <div class="card2 item" style="width: 70%">
             <h5 class="card-header">Name: {{goal.name}}</h5>
             <p class="card-text">Description: {{goal.description}}</p>
             <form action="/goals/{{goal._id}}?_method=DELETE" method="POST">

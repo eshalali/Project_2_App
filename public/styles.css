@@ -1,7 +1,7 @@
 body {
     background-color: #edf6ff;
     text-align: center;
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Kaisei Opti', serif;
     /* background-color: #e6eef7; */
     /* opacity: 0.3; */
     background-image:  linear-gradient(#cdd4db 1px, transparent 1px), linear-gradient(to right, #d0d8e0 1px, #e6eef7 1px);
@@ -29,21 +29,6 @@ h1 {
     font-size: 70px;
     font-style: italic;
     color:rgb(70, 101, 180);
-    /* background-color: rgba(115, 168, 220, .4) ;
-    padding: 0.1em 0.4em;
-    border-radius: 0.8em 0.3em;
-    background: transparent;
-    background-image: linear-gradient(
-        to right,
-        rgba(115, 168, 220, 0.1),
-        rgba(115, 168, 220, 0.7) 4%,
-        rgba(115, 168, 220, 0.3)
-    );
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto; */
 }
 
 .homeIcons {
@@ -71,7 +56,7 @@ h5 {
 }
 
 .submit {
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Kaisei Opti', serif;
     width: 200px;
     background-color: #5a8ac0;
     color: rgb(0, 0, 0)
@@ -104,7 +89,7 @@ label {
 }
 
 button {
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Kaisei Opti', serif;
     width: 200px;
     background-color: #5a8ac0;
     color: rgb(0, 0, 0);
@@ -126,7 +111,7 @@ h2 {
 
 .btn-primary {
     background-color: #6197d6 !important;
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Kaisei Opti', serif;
 }
 
 .btn-default {
@@ -134,7 +119,7 @@ h2 {
     width: 140px;
     height: 40px;
     color:rgb(255, 255, 255);
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Kaisei Opti', serif;
     border: #4b525a 1px solid
 }
 .btn-info {

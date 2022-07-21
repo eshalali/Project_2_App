@@ -13,7 +13,7 @@
     <!-- link for font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Ibarra+Real+Nova&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&display=swap" rel="stylesheet">
     <script type="text/javascript"
     src="https://cdn.finage.co.uk/ticker-tape/main.js">
     </script>
@@ -61,22 +61,79 @@
         
     <div>
     <h2 class="display-6">Investments</h2>
+    </div>
+        <a href="/investments/new" class="btn btn-primary">Create new investment</a>
+    </div>
     <div class="row">
         <div class="col">
-        {% for investment in investments %}
-        <div class="card2" style="width: 70%; height: 150px">
-            <h5 class="card-header">Name: {{investment.name}}</h5>
-            <h6 class="card-text">Amount: ${{investment.amount}}</h6>
-            <p class="card-text">Description: {{investment.description}}</p>
-            <h6 class="card-text">Category: {{investment.category}}</h6>
-            <a href="/investments/{{investment._id}}" class="btn btn-info">View expense</a>
-        </div>
-        </div>
-        </div>
-        {% endfor %}
-    </div>
-    <a href="/investments/new" class="btn btn-primary">Create new investment</a>
-    </div>
+            {% for investment in investments %}
+            {% if investment.category == "Stocks" %}
+            <div class="card1" style="width: 70%; background-color: #64d89479; border-left: #64d894 solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+            </div>
+            {% elsif investment.category == "Bonds" %}
+            <div class="card1" style="width: 70%; background-color: #19b09279; border-left: #19b092 solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+            </div>
+            {% elsif investment.category == "Mutual Funds" %}
+            <div class="card1" style="width: 70%; background-color: #9dbbd879; border-left: #9dbbd8 solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+            </div>
+            {% elsif investment.category == "ETFs" %}
+            <div class="card1" style="width: 70%; background-color: #14c7de79; border-left: #14c7de solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+            </div>
+            {% elsif investment.category == "Real Estate" %}
+            <div class="card1" style="width: 70%; background-color: #3498db79; border-left: #3498db solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+            </div>
+            {% elsif investment.category == "Options" %}
+            <div class="card1" style="width: 70%; background-color: #444fad79; border-left: #444fad solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+            </div>
+            {% elsif investment.category == "Cryptocurrency" %}
+            <div class="card1" style="width: 70%; background-color: #c7c3bd79; border-left: #c7c3bd solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+            </div>
+            {% elsif investment.category == "Commodities" %}
+            <div class="card1" style="width: 70%; background-color: rgba(39, 98, 150, 0.55); border-left: rgb(39, 98, 150) solid 4px;">
+                <h5 class="card-header">Name: {{investment.name}}</h5>
+                <h6 class="card-text">Amount: ${{investment.amount}}</h6>
+                <p class="card-text">Description: {{investment.description}}</p>
+                <h6 class="card-text">Category: {{investment.category}}</h6>
+                <a href="/investments/{{investment._id}}" class="btn btn-info">View investment</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+
   </body>
 </html>
 
