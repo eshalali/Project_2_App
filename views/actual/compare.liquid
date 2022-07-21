@@ -1,21 +1,38 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <!-- link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- link for css -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- link for font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Ibarra+Real+Nova&family=Yeseva+One&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+      const var1 = 1
+      const var2 = 2
+      const var3 = 3
+      const var4 = 4
+      const var5 = 5
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Task', 'Hours per Day', {role: 'style'}],
+          ['Work',     var1, 'color: #e5e4e2' ],
+          ['Eat',      var2, 'color: #e5e4e1' ],
+          ['Commute',  var3, 'color: #e5e4e4' ],
+          ['Watch TV', var4, 'color: #e5e4e6' ],
+          ['Sleep',    var5, '#e5e4e3' ]
         ]);
 
         var options = {
-          title: 'My Daily Activities',
+          title: 'Expected Expenses',
           pieHole: 0.4,
         };
 
@@ -23,21 +40,68 @@
         chart.draw(data, options);
       }
     </script>
+
     <script type="text/javascript">
+      let actHousing = 0
+      let actUtilities = 0
+      let actInsurance = 0
+      let actFood = 0
+      let actTransport = 0
+      let actMedical = 0
+      let actPersonal = 0
+      let actShopping = 0
+      let actEnter = 0
+      let actDebt = 0
+      let actSavings = 0
+      let actOther = 0
+      for (let i = 0; i < actual.length; i++) {
+      if (actual[i].category === 'Housing') {
+          actHousing+=actual[i].amount
+      } else if (actual[i].category === 'Utilities'){
+          actUtilities+=actual[i].amount
+      } else if (actual[i].category === 'Insurance'){
+          actInsurance+=actual[i].amount
+      } else if (actual[i].category === 'Food'){
+          actFood+=actual[i].amount
+      } else if (actual[i].category === 'Transportation'){
+          actTransport+=actual[i].amount
+      } else if (actual[i].category === 'Medical'){
+          actMedical+=actual[i].amount
+      } else if (actual[i].category === 'Personal'){
+          actPersonal+=actual[i].amount
+      } else if (actual[i].category === 'Shopping'){
+          actShopping+=actual[i].amount
+      } else if (actual[i].category === 'Entertainment'){
+          actEnter+=actual[i].amount
+      } else if (actual[i].category === 'Debt'){
+          actDebt+=actual[i].amount
+      } else if (actual[i].category === 'Savings'){
+          actSavings+=actual[i].amount
+      } else {
+          actOther+=actual[i].amount
+      }
+   }
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data2 = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+            ['Category', 'Amount', {role: 'style'} ],
+            ['Housing', actHousing],
+            ['Utilities', actUtilities],
+            ['Insurance', actInsurance],
+            ['Food', actFood],
+            ['Transportation', actTransport],
+            ['Medical', actMedical],
+            ['Personal', actPersonal],
+            ['Shopping', actShopping],
+            ['Entertainment', actEnter],
+            ['Debt', actDebt],
+            ['Savings', actSavings],
+            ['Other', actOther],
+            ]);
 
         var options = {
-          title: 'My Daily Activities',
+          title: 'Actual Expenses',
           pieHole: 0.4,
         };
 
@@ -47,7 +111,22 @@
     </script>
   </head>
   <body>
-    <div id="donutchart" style="width: 700px; height: 700px; display: inline-block;"></div>
-    <div id="donutchart2" style="width: 700px; height: 700px; display: inline-block;"></div>
+    <nav class="navbar navbar-expand-md ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <a href="/users/homepage" class="nav-link text-light">Home</a>
+          <a href="/users/signup" class="nav-link text-light">Sign Up</a>
+          <a href="/users/login" class="nav-link text-light">Log In</a>
+          <a href="/expected/" class="nav-link text-light">Expected Expenses</a>
+          <a href="/actual/" class="nav-link text-light">Actual Expenses</a>
+          <a href="/goals/" class="nav-link text-light">Goals</a>
+          <a href="/investments/" class="nav-link text-light">Investments</a>
+          <a href="/users/logout" class="nav-link text-light">Log Out</a>
+      </div>
+    </nav>
+    <div id="donutchart" style="width: 650px; height: 800px; display: inline-block; text-align: center;"></div>
+    <div id="donutchart2" style="width: 650px; height: 800px; display: inline-block;"></div>
   </body>
 </html>

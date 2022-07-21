@@ -32,7 +32,6 @@
             >
             <label for="cat" class="form-label">Category:</label>
             <select name="category" id="cat">
-                    <option value="{{item.category}}">{{item.category}}</option>
                     <option value="Housing">Housing</option>
                     <option value="Utilities">Utilities</option>
                     <option value="Insurance">Insurance</option>
@@ -45,6 +44,11 @@
                     <option value="Debt">Debt</option>
                     <option value="Savings">Savings</option>
                     <option value="Other">Other</option>
+            </select>
+            <label for="type" class="form-label">Type:</label>
+            <select name="type" id="type">
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
             </select>
         </fieldset>
         <input 

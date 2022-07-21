@@ -1,22 +1,129 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div>
+<div class="container">
     <h2 class="display-6">Actual Expenses</h2>
+    <a href="/actual/new" class="btn btn-primary">Create new expense</a>
+    <a href="/actual/compare" class="btn btn-primary">Compare</a>
     <div class="row">
+    <div class="col">
+        <h2>Expenses</h2>
         {% for item in actual %}
-        <div class="card" style="width: 100%" style="background-color: lightgrey">
+        {% if item.type == 'Expense' %}
+        {% if item.category == "Housing" %}
+        <div class="card1" style="width: 100%; background-color: #64d89479; border-left: #64d894 solid 4px;">
             <h5 class="card-header">Name: {{item.name}}</h5>
-            <h6 class="card-text">Date: {{item.date}}</h6>
             <h6 class="card-text">Amount: ${{item.amount}}</h6>
             <p class="card-text">Description: {{item.description}}</p>
             <h6 class="card-text">Category: {{item.category}}</h6>
             <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
-            </div>
         </div>
-        {% endfor %}
-    </div>
-    <a href="/actual/new" class="btn btn-primary">Create new expense</a>
-    <a href="/actual/compare" class="btn btn-primary">Compare</a>
-</div>
+        {% elsif item.category == "Utilities" %}
+        <div class="card1" style="width: 100%; background-color: #19b09279; border-left: #19b092 solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Insurance" %}
+        <div class="card1" style="width: 100%; background-color: #9dbbd879; border-left: #9dbbd8 solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Food" %}
+        <div class="card1" style="width: 100%; background-color: #14c7de79; border-left: #14c7de solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Transport" %}
+        <div class="card1" style="width: 100%; background-color: #3498db79; border-left: #3498db solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Medical" %}
+        <div class="card1" style="width: 100%; background-color: #444fad79; border-left: #444fad solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Personal" %}
+        <div class="card1" style="width: 100%; background-color: #c7c3bd79; border-left: #c7c3bd solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Shopping" %}
+        <div class="card1" style="width: 100%; background-color: #515c5d79; border-left: #515c5d solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View details</a>
+        </div>
+        {% elsif item.category == "Entertainment" %}
+        <div class="card1" style="width: 100%; background-color: #b09cff79; border-left: #b09cff solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Debt" %}
+        <div class="card1" style="width: 100%; background-color: #8c54d079; border-left: #8c54d0 solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Savings" %}
+        <div class="card1" style="width: 100%; background-color: rgba(115, 194, 162, 0.55); border-left: rgb(115, 194, 163) solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+        </div>
+        {% elsif item.category == "Other" %}
+        <div class="card1" style="width: 100%; background-color: rgba(39, 98, 150, 0.55); border-left: rgb(39, 98, 150) solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View expense</a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
 
+
+    <div class="col">
+        <h2>Income</h2>
+        {% for item in actual %}
+        {% if item.type == "Income" %}
+        <div class="card1" style="width: 100%; background-color: #9ed2ee79; border-left: #3662c7 solid 4px;">
+            <h5 class="card-header">Name: {{item.name}}</h5>
+            <h6 class="card-text">Amount: ${{item.amount}}</h6>
+            <p class="card-text">Description: {{item.description}}</p>
+            <h6 class="card-text">Category: {{item.category}}</h6>
+            <a href="/actual/{{item._id}}" class="btn btn-info">View income</a>
+        {% endif %}
+        {% endfor %} 
+        </div>
+    </div>
+</div>
+</div>
 {% endblock %}

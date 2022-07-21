@@ -8,6 +8,7 @@ const Expected = require('../models/expected')
 //////////////////////////////////////
 const router = express.Router()
 
+
 // NEW route - GET form
 // localhost:4000/actual/new
 router.get('/new', (req, res) => {
@@ -90,7 +91,7 @@ router.get('/compare', (req, res) => {
     let actOther = 0
     Actual.find({ owner: req.session.userId })
         .then(actual => {
-             res.render('actual/compare')
+             res.render('actual/compare', { actual })
             })
         .catch(err => {
             res.json(err)
