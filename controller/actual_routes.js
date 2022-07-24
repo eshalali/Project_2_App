@@ -121,12 +121,12 @@ router.put('/:id', (req, res) => {
 router.get('/', (req, res) => {
     Actual.find({ owner: req.session.userId})
         .then(actual => {
-            let incomeAmount = 10
-            let expenseAmount = 20
+            let incomeAmount = 0
+            let expenseAmount = 0
             for (let i = 0; i < actual.length; i++) {
                 if (actual[i].type === 'Income') {
                     incomeAmount+=actual[i].amount
-                } else {
+                } else if (actual[i].type === 'Expense'){
                     expenseAmount+=actual[i].amount
                 }
             }

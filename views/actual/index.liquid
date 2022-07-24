@@ -6,7 +6,7 @@
     <div class="row">
     <div class="col">
         <!-- for expenses, color the card by category -->
-        <h2>Expenses: {{expenseAmount}}</h2>
+        <h2>Expenses: ${{expenseAmount}}</h2>
         {% for item in actual %}
         {% if item.type == 'Expense' %}
         {% if item.category == "Housing" %}
@@ -111,7 +111,7 @@
 
 
     <div class="col">
-        <h2>Income: {{expenseAmount}}</h2>
+        <h2>Income: ${{incomeAmount}}</h2>
         {% for item in actual %}
         {% if item.type == "Income" %}
         <div class="card1" style="width: 100%; background-color: #9ed2ee79; border-left: #3662c7 solid 4px;">
