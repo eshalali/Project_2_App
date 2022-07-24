@@ -11,6 +11,8 @@ const actualSchema = new Schema ({
     category: {type: String, required: true},
     date: String,
     type: {type: String, required: true},
+    incomeAmount: Number,
+    expenseAmount: Number,
     // get object id from the model referenced by 'User'
     owner: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {

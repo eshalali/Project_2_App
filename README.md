@@ -31,7 +31,7 @@ category: String (dropdown menu)
     - See all saved expected, actual expenses, goals, and investments
 - Create expected expenses
     - Build schema/model
-    - Choose category
+    - Choose category for expense
 - See expected expenses
     - Query all expected expenses with find()
     - Return all
@@ -44,12 +44,9 @@ category: String (dropdown menu)
 - Create actual expenses
     - Build schema/model
     - Choose category, tag
-    - User input or connect to bank
 - See actual expenses
     - Query all actual expenses with find()   
     - Return all
-    - Have graph comparing income and expenses
-    - Show comparison to expected expenses
 - Update actual expenses
     - Find by ID
     - Update
@@ -96,6 +93,7 @@ Delete      | DELETE     | /expected/:id      | delete a single expected expense
 * Allows for access to stock data
 * Each symbol has category that it is part of
 * Creates a ticker showing the data at the top of the investments page
+* https://finage.co.uk/docs/api/getting-started
 
 ## Wireframes ##
 ![wireframe](/images/WF1.png)
