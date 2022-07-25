@@ -86,7 +86,16 @@ router.put('/:id', (req, res) => {
 router.get('/', (req, res) => {
     Expected.find({ owner: req.session.userId})
         .then(expected => {
-            res.render('expected/index', { expected })
+            let incomeAmountExp = 0
+            let expenseAmountExp = 0
+            for (let i = 0; i < expected.length; i++) {
+                if (expected[i].type === 'Income') {
+                    incomeAmountExp+=expected[i].amount
+                } else if (expected[i].type === 'Expense'){
+                    expenseAmountExp+=expected[i].amount
+                }
+            }
+            res.render('expected/index', { expected, incomeAmountExp: incomeAmountExp, expenseAmountExp: expenseAmountExp })
         })
         .catch(err => {
             res.json(err)

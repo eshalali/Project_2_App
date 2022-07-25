@@ -6,7 +6,11 @@
     <div class="row">
     <div class="col">
         <!-- for expenses, color the card by category -->
-        <h2>Expenses: ${{expenseAmount}}</h2>
+        {% if incomeAmount >= expenseAmount %}
+        <h2 style="color: rgb(70, 101, 180)">Expenses: ${{expenseAmount}}</h2>
+        {% elsif expenseAmount > incomeAmount %}
+        <h2 style="color: rgb(180, 70, 70)">Expenses: ${{expenseAmount}}</h2>
+        {% endif %}
         {% for item in actual %}
         {% if item.type == 'Expense' %}
         {% if item.category == "Housing" %}

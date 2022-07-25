@@ -5,7 +5,11 @@
     <a href="/expected/new" class="btn btn-primary">Create new expense</a>
     <div class="row">
     <div class="col">
-        <h2>Expenses</h2>
+        {% if incomeAmountExp >= expenseAmountExp %}
+        <h2 style="color: rgb(70, 101, 180)">Expenses: ${{expenseAmountExp}}</h2>
+        {% elsif expenseAmountExp > incomeAmountExp%}
+        <h2 style="color: rgb(180, 70, 70)">Expenses: ${{expenseAmountExp}}</h2>
+        {% endif %}
         <!-- for expenses, color card by category -->
         {% for item in expected %}
         {% if item.type == 'Expense' %}
@@ -111,7 +115,7 @@
 
 
     <div class="col">
-        <h2>Income</h2>
+        <h2>Income: ${{incomeAmountExp}}</h2>
         {% for item in expected %}
         {% if item.type == "Income" %}
         <div class="card1" style="width: 100%; background-color: #9ed2ee79; border-left: #3662c7 solid 4px;">
